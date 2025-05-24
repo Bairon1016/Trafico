@@ -27,7 +27,7 @@
             <nav>
                 <ul class="menu">
                     <li><button id="btn-dashboard" class="boton-menu boton-categoria active"><i class="bi bi-hand-index-thumb-fill"></i> Dashboard</button></li>
-                    <li><button id="btn-powerbi" class="boton-menu boton-categoria"><i class="bi bi-bar-chart-fill"></i> Power BI</button></li>
+                    <li><button id="btn-powerbi" class="boton-menu boton-categoria"><i class="bi bi-bar-chart-fill"></i> Power BI Tipo/Accidente</button></li>
                     <li><button id="btn-powerbi-fecha" class="boton-menu boton-categoria"><i class="bi bi-calendar3"></i> Power BI Fecha</button></li>
                     <li><button id="btn-powerbi-localidad" class="boton-menu boton-categoria"><i class="bi bi-geo-alt-fill"></i> Power BI Localidad</button></li>
                 </ul>
@@ -129,7 +129,7 @@
             powerbi1.style.display = "block";
             powerbiFecha.style.display = "none";
             powerbiLocalidad.style.display = "none";
-            document.querySelector("#titulo-principal").innerText = "Tablero Power BI";
+            document.querySelector("#titulo-principal").innerText = "Power BI por Tipo de Accidente";
         });
 
         document.querySelector("#btn-powerbi-fecha").addEventListener("click", () => {
