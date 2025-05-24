@@ -1,19 +1,18 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Analisis de movilidad</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
-    <link rel="stylesheet" href="./css/main.css">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Análisis de movilidad</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css" />
+    <link rel="stylesheet" href="./css/main.css" />
 </head>
 <body>
-
     <div class="wrapper">
         <header class="header-mobile">
-            <h1 class="logo">Analisis de movilidad</h1>
+            <h1 class="logo">Análisis de movilidad</h1>
             <button class="open-menu" id="open-menu">
                 <i class="bi bi-list"></i>
             </button>
@@ -23,43 +22,133 @@
                 <i class="bi bi-x"></i>
             </button>
             <header>
-                <h1 class="logo">Analisis de movilidad</h1>
+                <h1 class="logo">Análisis de movilidad</h1>
             </header>
             <nav>
                 <ul class="menu">
-                    <li>
-                        <button id="todos" class="boton-menu boton-categoria active"><i class="bi bi-hand-index-thumb-fill"></i> Dashboard</button>
-                    </li>
-                    <li>
-                        <button id="abrigos" class="boton-menu boton-categoria"><i class="bi bi-hand-index-thumb"></i> Power BI</button>
-                    </li>
-                    <li>
-                        <button id="camisetas" class="boton-menu boton-categoria"><i class="bi bi-hand-index-thumb"></i> ETL</button>
-                    </li>
-                    <li>
-                        <button id="pantalones" class="boton-menu boton-categoria"><i class="bi bi-hand-index-thumb"></i> Base de datos</button>
-                    </li>
-                    <li>
-                        <a class="boton-menu boton-carrito" href="./carrito.html">
-                            <i class="bi bi-cart-fill"></i> Tablero Power BI <span id="numerito" class="numerito">0</span>
-                        </a>
-                    </li>
+                    <li><button id="btn-dashboard" class="boton-menu boton-categoria active"><i class="bi bi-hand-index-thumb-fill"></i> Dashboard</button></li>
+                    <li><button id="btn-powerbi" class="boton-menu boton-categoria"><i class="bi bi-bar-chart-fill"></i> Power BI</button></li>
+                    <li><button id="btn-powerbi-fecha" class="boton-menu boton-categoria"><i class="bi bi-calendar3"></i> Power BI Fecha</button></li>
+                    <li><button id="btn-powerbi-localidad" class="boton-menu boton-categoria"><i class="bi bi-geo-alt-fill"></i> Power BI Localidad</button></li>
                 </ul>
             </nav>
             <footer>
-                <p class="texto-footer">© 2025 Analisis de movilidad</p>
+                <p class="texto-footer">© 2025 Análisis de movilidad</p>
             </footer>
         </aside>
+
         <main>
             <h2 class="titulo-principal" id="titulo-principal">Dashboard</h2>
-            <div id="contenedor-productos" class="contenedor-productos">
-                <!-- Esto se va a rellenar con JS -->
-            </div>
+
+            <!-- Contexto del problema (visible solo en Dashboard) -->
+            <section class="seccion-contexto" id="contexto-problema">
+                <h3>Contexto del Problema</h3>
+                <p>
+                    Bogotá enfrenta altos niveles de congestión y accidentes viales debido a la falta de infraestructura inteligente y datos en tiempo real. Esta situación limita la capacidad de las autoridades para tomar decisiones rápidas y efectivas en temas de movilidad y seguridad vial.
+                </p>
+                <h3>Simulación IoT</h3>
+                <p>
+                    Se desarrolló un modelo 3D en Unity que simula tramos viales de Bogotá con sensores IoT virtuales. Esta simulación permite observar cómo se recopilan datos de tráfico en diferentes escenarios críticos, apoyando el análisis y la validación de estrategias de intervención.
+                </p>
+                <h3>Objetivos de Negocio</h3>
+                <ul>
+                    <li>Optimizar la toma de decisiones para autoridades de movilidad.</li>
+                    <li>Reducir costos y riesgos asociados a la accidentalidad vial.</li>
+                    <li>Mejorar la eficiencia en la planificación urbana.</li>
+                    <li>Promover ciudades más seguras y sostenibles, alineadas con los ODS.</li>
+                </ul>
+            </section>
+
+            <!-- Dashboard original -->
+            <section id="contenedor-productos" class="contenedor-productos"></section>
+
+            <!-- Power BI 1 -->
+            <section id="powerbi-container" style="display: none; margin-top: 1rem; height: 800px;">
+                <iframe
+                    title="ProyectoBigData"
+                    aria-label="Visualización general en Power BI"
+                    width="100%"
+                    height="100%"
+                    src="https://app.powerbi.com/view?r=eyJrIjoiNTcxNTdkZTYtNzM0MS00ZjBlLThmNTctMDJlZDhiMWVkOGU2IiwidCI6IjA3ZGE2N2EwLTFmNDMtNGU4Yy05NzdmLTVmODhiNjQ3MGVlNiIsImMiOjR9"
+                    frameborder="0"
+                    allowFullScreen="true"
+                ></iframe>
+            </section>
+
+            <!-- Power BI Fecha -->
+            <section id="powerbi-fecha-container" style="display: none; margin-top: 1rem; height: 800px;">
+                <iframe
+                    title="ProyectoBD_Fecha"
+                    aria-label="Visualización por fecha en Power BI"
+                    width="100%"
+                    height="100%"
+                    src="https://app.powerbi.com/view?r=eyJrIjoiOTU1MmU4NGYtZGU4Ny00YzM5LWE4MGYtMDZmZTU2YjViMTg4IiwidCI6IjA3ZGE2N2EwLTFmNDMtNGU4Yy05NzdmLTVmODhiNjQ3MGVlNiIsImMiOjR9"
+                    frameborder="0"
+                    allowFullScreen="true"
+                ></iframe>
+            </section>
+
+            <!-- Power BI Localidad -->
+            <section id="powerbi-localidad-container" style="display: none; margin-top: 1rem; height: 800px;">
+                <iframe
+                    title="ProyectoBD_Localidad"
+                    aria-label="Visualización por localidad en Power BI"
+                    width="100%"
+                    height="100%"
+                    src="https://app.powerbi.com/view?r=eyJrIjoiMGM2Y2U0MGEtMTFlNy00OTc1LWI2NjYtODViOTU4MDE5ZGU4IiwidCI6IjA3ZGE2N2EwLTFmNDMtNGU4Yy05NzdmLTVmODhiNjQ3MGVlNiIsImMiOjR9"
+                    frameborder="0"
+                    allowFullScreen="true"
+                ></iframe>
+            </section>
         </main>
     </div>
-    
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
-    <script src="./js/main.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
     <script src="./js/menu.js"></script>
+    <script src="./js/main.js"></script>
+
+    <script>
+        const contextoProblema = document.querySelector("#contexto-problema");
+        const dashboard = document.querySelector("#contenedor-productos");
+        const powerbi1 = document.querySelector("#powerbi-container");
+        const powerbiFecha = document.querySelector("#powerbi-fecha-container");
+        const powerbiLocalidad = document.querySelector("#powerbi-localidad-container");
+
+        document.querySelector("#btn-dashboard").addEventListener("click", () => {
+            contextoProblema.style.display = "block";
+            dashboard.style.display = "grid";
+            powerbi1.style.display = "none";
+            powerbiFecha.style.display = "none";
+            powerbiLocalidad.style.display = "none";
+            document.querySelector("#titulo-principal").innerText = "Dashboard";
+        });
+
+        document.querySelector("#btn-powerbi").addEventListener("click", () => {
+            contextoProblema.style.display = "none";
+            dashboard.style.display = "none";
+            powerbi1.style.display = "block";
+            powerbiFecha.style.display = "none";
+            powerbiLocalidad.style.display = "none";
+            document.querySelector("#titulo-principal").innerText = "Tablero Power BI";
+        });
+
+        document.querySelector("#btn-powerbi-fecha").addEventListener("click", () => {
+            contextoProblema.style.display = "none";
+            dashboard.style.display = "none";
+            powerbi1.style.display = "none";
+            powerbiFecha.style.display = "block";
+            powerbiLocalidad.style.display = "none";
+            document.querySelector("#titulo-principal").innerText = "Power BI por Fecha";
+        });
+
+        document.querySelector("#btn-powerbi-localidad").addEventListener("click", () => {
+            contextoProblema.style.display = "none";
+            dashboard.style.display = "none";
+            powerbi1.style.display = "none";
+            powerbiFecha.style.display = "none";
+            powerbiLocalidad.style.display = "block";
+            document.querySelector("#titulo-principal").innerText = "Power BI por Localidad";
+        });
+    </script>
 </body>
 </html>
